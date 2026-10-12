@@ -73,12 +73,26 @@
     </figure>
     <p class="try" id="demo-help">Click the window and try it: <kbd>↑</kbd> <kbd>↓</kbd> move, <kbd>Space</kbd> marks, <kbd>←</kbd> <kbd>→</kbd> switch panels.</p>
 
-    <div class="actions" id="download">
-      <a class="button" href="https://github.com/ulebule/eagle-commander-releases/releases/latest/download/EagleCommander.dmg">Download for macOS</a>
-      <a class="button secondary" href="/buy/">Buy a licence, €9.99</a>
+    <!-- Until the first release the download says so; after it, the second
+         block shows instead (move `hidden`). release.sh refuses a final
+         release while the published block is still hidden. -->
+    <div id="download">
+      <div data-release="pending">
+        <div class="actions">
+          <span class="button" aria-disabled="true">Download for macOS: coming soon</span>
+          <a class="button secondary" href="/buy/">Buy a licence, €9.99</a>
+        </div>
+        <p class="fine">The first version is with Apple, who check and sign every app that is not from the App Store. It will be here, and on Homebrew, as soon as they are done.</p>
+      </div>
+      <div data-release="published" hidden>
+        <div class="actions">
+          <a class="button" href="https://github.com/ulebule/eagle-commander-releases/releases/latest/download/EagleCommander.dmg">Download for macOS</a>
+          <a class="button secondary" href="/buy/">Buy a licence, €9.99</a>
+        </div>
+        <p class="fine">macOS 14 Sonoma or later, Apple silicon and Intel. Or with Homebrew:</p>
+        <p class="fine"><code class="brew">brew install --cask ulebule/tap/eagle-commander</code></p>
+      </div>
     </div>
-    <p class="fine">macOS 14 Sonoma or later, Apple silicon and Intel. Or with Homebrew:</p>
-    <p class="fine"><code class="brew">brew install --cask ulebule/tap/eagle-commander</code></p>
 
     <section class="section" id="features" aria-labelledby="features-title">
       <h2 id="features-title">What it does</h2>
