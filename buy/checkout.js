@@ -3,14 +3,21 @@
 // The token is Paddle's client-side token: it is made for web pages and is
 // no secret. The secret half of the integration — the webhook secret and the
 // API key — lives only in the Worker.
-const PADDLE = {
-  // "sandbox" until Paddle has approved the live account, then "production"
-  // with the live token and price.
+const SANDBOX = {
   environment: "sandbox",
   token: "test_ebeddba031173d96febc9bd5668",
   priceId: "pri_01m4qmc01cy3q4b1q6z41109ra",
   unitPrice: 9.99,
 };
+const LIVE = {
+  environment: "production",
+  token: "live_2bdc86c33920c16dd461e7cc96f",
+  priceId: "pri_01m4qsac88cpmqycryxrc6yc6p",
+  unitPrice: 9.99,
+};
+// Paddle approved the live account and the domain on 2026-10-12, so the shop
+// is open. SANDBOX stays for trying the whole chain without paying.
+const PADDLE = LIVE;
 
 (() => {
   const form = document.getElementById("order");
