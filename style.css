@@ -1,0 +1,371 @@
+/* Eagle Commander — one stylesheet for every page.
+ *
+ * The system font on purpose: a page for a program that sends nothing
+ * anywhere (D97) does not fetch its type from somebody else's server, and on
+ * a Mac it is the same face the program itself is set in. */
+
+:root {
+  --page: #e4e9ef;
+  --paper: #ffffff;
+  --ink: #1c2530;
+  --muted: #5f6b78;
+  --rule: #c9d2dc;
+  --eagle: #164b7e;          /* the blue of the icon */
+  --eagle-ink: #ffffff;
+  --marked: #b8322a;         /* marked files are red, as in Total Commander */
+  --key: #f2f5f8;
+  --todo: #fff3b0;
+
+  --measure: 40rem;
+  --wide: 68rem;
+  --radius-window: 12px;
+  --radius-control: 7px;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #1a2029;
+    --paper: #232b36;
+    --ink: #e6ebf1;
+    --muted: #9aa7b5;
+    --rule: #364352;
+    --eagle: #4a8bd4;
+    --eagle-ink: #0d1520;
+    --marked: #ff7468;
+    --key: #2c3643;
+    --todo: #5a4b00;
+  }
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-feature-settings: "kern";
+}
+
+a { color: var(--eagle); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--eagle);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.5rem 0.75rem; }
+
+/* ---------- Header and footer ---------- */
+
+.site-header,
+.site-footer,
+.page {
+  width: min(100% - 2rem, var(--wide));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  font-weight: 650;
+  text-decoration: none;
+}
+.brand img { width: 32px; height: 32px; }
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-left: auto;
+  font-size: 0.94rem;
+}
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--eagle); }
+
+.site-footer {
+  margin-top: 6rem;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.site-footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-bottom: 1rem; }
+
+/* ---------- Text ---------- */
+
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; }
+
+h1 {
+  font-size: clamp(2.1rem, 1.2rem + 3.6vw, 3.6rem);
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  max-width: 16em;
+  margin: 2.5rem 0 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+h3 { font-size: 1.05rem; font-weight: 650; margin: 0 0 0.4rem; }
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: var(--measure);
+  margin: 0 0 2.5rem;
+}
+
+.prose { max-width: var(--measure); }
+/* A whole page of text keeps the page's left edge, under the logo; only
+ * the lines are held to a readable measure. */
+.page.prose { max-width: none; }
+.page.prose > * { max-width: var(--measure); }
+.prose p, .prose ul, .prose ol { margin: 0 0 1rem; }
+.prose li { margin-bottom: 0.35rem; }
+.prose h2 { margin-top: 2.5rem; }
+.prose h3 { margin-top: 1.75rem; }
+
+code, kbd {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.88em;
+}
+
+/* Placeholders that must be filled before the page is published. The
+ * release script refuses to publish while any are left. */
+.todo { background: var(--todo); padding: 0 0.2em; border-radius: 3px; }
+
+/* ---------- The window (the one bold thing on the page) ---------- */
+
+.window {
+  margin: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-window);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 24px 60px -24px rgba(22, 40, 70, 0.35);
+  overflow: hidden;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.window:focus-visible { outline-offset: 4px; border-radius: var(--radius-window); }
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  height: 2.4rem;
+  padding: 0 0.85rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--key);
+}
+.lights { display: flex; gap: 0.45rem; }
+.lights i { width: 0.75rem; height: 0.75rem; border-radius: 50%; background: #ff5f57; }
+.lights i:nth-child(2) { background: #febc2e; }
+.lights i:nth-child(3) { background: #28c840; }
+.titlebar span:last-child { flex: 1; text-align: center; color: var(--muted); font-weight: 600; margin-right: 3rem; }
+
+.panels { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.panel { overflow: hidden; }
+.panel + .panel { border-left: 1px solid var(--rule); }
+
+.path {
+  padding: 0.4rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
+  font-weight: 600;
+}
+.panel.is-active .path { color: var(--ink); }
+
+.listing { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.listing th {
+  padding: 0.3rem 0.7rem;
+  text-align: left;
+  color: var(--muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--rule);
+}
+.listing td { padding: 0.22rem 0.7rem; white-space: nowrap; }
+.listing .num { text-align: right; }
+.listing .dir td:first-child { font-weight: 600; }
+.listing .marked td { color: var(--marked); }
+.panel.is-active .cursor td { background: var(--eagle); color: var(--eagle-ink); }
+.panel.is-active .cursor.marked td { color: #ffd9d6; }
+.panel:not(.is-active) .cursor td { box-shadow: inset 0 1px 0 var(--rule), inset 0 -1px 0 var(--rule); }
+
+.status {
+  padding: 0.35rem 0.7rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.fkeys {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+  background: var(--rule);
+}
+.fkeys li { padding: 0.45rem 0.6rem; background: var(--key); white-space: nowrap; }
+.fkeys kbd { font-weight: 700; margin-right: 0.35rem; font-size: 0.95em; }
+
+.try {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.try kbd {
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+/* ---------- Actions ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 2.5rem 0 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--eagle);
+  background: var(--eagle);
+  color: var(--eagle-ink);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { filter: brightness(1.08); }
+.button.secondary { background: transparent; color: var(--eagle); }
+.button:disabled { opacity: 0.55; cursor: progress; }
+
+.fine { color: var(--muted); font-size: 0.875rem; margin: 0.6rem 0 0; }
+
+.brew {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--paper);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* ---------- Sections of the landing page ---------- */
+
+.section { margin-top: 6rem; }
+
+.features {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) minmax(0, var(--measure));
+  gap: 0 3rem;
+  margin: 2rem 0 0;
+}
+.features dt {
+  font-weight: 650;
+  padding: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+.features dd {
+  margin: 0;
+  padding: 1.1rem 0 1.4rem;
+  border-top: 1px solid var(--rule);
+}
+.features dd ul { margin: 0; padding-left: 1.1rem; }
+.features dd li { margin-bottom: 0.3rem; }
+
+.price {
+  display: grid;
+  grid-template-columns: auto minmax(0, var(--measure));
+  gap: 0.5rem 3rem;
+  align-items: start;
+  justify-content: start;
+}
+.price .amount {
+  font-size: clamp(3rem, 2rem + 4vw, 5rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.price p { margin: 0 0 1rem; }
+
+/* ---------- Checkout ---------- */
+
+.order {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+.order label { display: grid; gap: 0.3rem; font-weight: 600; font-size: 0.94rem; }
+.order input {
+  width: 6rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.order output { color: var(--muted); padding-bottom: 0.7rem; font-variant-numeric: tabular-nums; }
+
+.message { margin-top: 1.5rem; padding: 0.8rem 1rem; border-left: 3px solid var(--marked); background: var(--paper); max-width: var(--measure); }
+.message[hidden] { display: none; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 760px) {
+  .panels { grid-template-columns: minmax(0, 1fr); }
+  .panel + .panel { display: none; }
+  .fkeys { grid-template-columns: repeat(3, 1fr); }
+  .listing .date { display: none; }
+  .features, .price { grid-template-columns: 1fr; }
+  .features dd { border-top: 0; padding-top: 0.2rem; }
+  .site-nav a:not(:last-child) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

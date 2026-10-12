@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buy Eagle Commander</title>
+  <meta name="description" content="A licence for Eagle Commander: €9.99 once, every 1.x version, on all your Macs.">
+  <link rel="icon" href="/icon-64.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="/"><img src="/icon-64.png" alt="" width="32" height="32">Eagle Commander</a>
+  </header>
+
+  <main id="main" class="page prose">
+    <h1>Buy a licence</h1>
+    <p class="lede">€9.99, paid once. It covers every 1.x version and is yours on all your Macs.</p>
+
+    <p>Your key arrives by e-mail a minute after you pay. Paste it into Eagle Commander under <strong>Help → Licence…</strong> and the trial limits are gone.</p>
+
+    <form class="order" id="order">
+      <label>
+        Licences
+        <input type="number" name="quantity" id="quantity" min="1" max="100" value="1" inputmode="numeric">
+      </label>
+      <output id="total" for="quantity" aria-live="polite">€9.99</output>
+      <button class="button" type="submit" id="checkout">Continue to checkout</button>
+    </form>
+    <p class="fine">One licence per person. A team buys one for each person who uses it. VAT is included; outside the euro area the checkout shows your own currency.</p>
+
+    <p class="message" id="failed" role="alert" hidden>The checkout did not load. A content blocker may have stopped it; allow cdn.paddle.com for this page, or write to <a href="mailto:support@eaglesoft.si">support@eaglesoft.si</a> and we will send you a payment link.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li>Payment is handled by Paddle, our reseller and Merchant of Record. Your receipt comes from them, and they handle VAT.</li>
+      <li>You can ask for your money back within 30 days, for any reason. See <a href="/refunds/">refunds</a>.</li>
+      <li>This page loads Paddle’s checkout; no other page on this site loads anything from anybody else. See <a href="/privacy/">privacy</a>.</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/refunds/">Refunds</a>
+      <a href="mailto:support@eaglesoft.si">support@eaglesoft.si</a>
+    </nav>
+    <p>Orders are processed by Paddle.com, our online reseller and Merchant of Record, who also handles order enquiries and returns.</p>
+  </footer>
+
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="/buy/checkout.js"></script>
+</body>
+</html>
