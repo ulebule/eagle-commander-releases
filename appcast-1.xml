@@ -6,6 +6,63 @@
     <description>Updates of Eagle Commander.</description>
     <language>en</language>
     <item>
+      <title>1.0.0-rc2</title>
+      <pubDate>Mon, 12 Oct 2026 20:09:41 GMT</pubDate>
+      <sparkle:version>202610122206</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-rc2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:channel>beta</sparkle:channel>
+      <description>&lt;p&gt;The first public release. Everything below arrived in phases 0–15; it is listed here once, by what it does rather than by when it was built.&lt;/p&gt;
+&lt;h3&gt;The panels&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Two panels with tabs, folder tree, brief and full listings, quick search by name, quick filter, navigation history, favourite folders.&lt;/li&gt;
+&lt;li&gt;Tabs can be locked to a folder: wander off freely, and coming back to the tab brings the folder back with it.&lt;/li&gt;
+&lt;li&gt;Panels side by side or one above the other.&lt;/li&gt;
+&lt;li&gt;Colour rules — mask, age, size, files or folders — with the first matching rule deciding. Marked and hidden entries keep their own colours.&lt;/li&gt;
+&lt;li&gt;The branch (&lt;code&gt;⌃B&lt;/code&gt;): every file below the current folder in one flat list, each named by its path, with the ordinary commands working on it.&lt;/li&gt;
+&lt;li&gt;Folder sizes on demand, select by mask, invert, by extension, and a selection that can be put aside and brought back.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Files&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;F5–F8 through a real operation engine: progress, conflicts, cancellation, a background queue, and &lt;code&gt;copyfile(3)&lt;/code&gt; on the local disk.&lt;/li&gt;
+&lt;li&gt;Delete to the Trash, delete permanently, or overwrite-then-delete — the last one saying plainly what that is worth on an SSD.&lt;/li&gt;
+&lt;li&gt;Multi-rename with patterns and counters, attributes and timestamps, split and join, checksums (SHA-256, BLAKE3) created and verified.&lt;/li&gt;
+&lt;li&gt;Compare two folders, and synchronize them: a direction per pair, optional deletion of extras, and a verification pass afterwards.&lt;/li&gt;
+&lt;li&gt;Compare two files line by line, with the changed part of a changed line highlighted, encodings, and honest answers for binaries and giants.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Archives&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ZIP and TAR read and written by us; RAR and 7z read through the system's &lt;code&gt;bsdtar&lt;/code&gt;. An archive behaves like a folder in the panel.&lt;/li&gt;
+&lt;li&gt;Encrypted ZIP: ZipCrypto and AES-256 read without ever putting the password on a command line, and packing with AES-256. Passwords live in the session, or in the Keychain if you tick the box.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Finding things&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Search by name, mask, size, date, content — as text or as a regular expression — optionally inside archives, with locked archives counted rather than silently skipped.&lt;/li&gt;
+&lt;li&gt;Saved searches, and a duplicate finder that decides by content and never offers to select a whole group.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The rest&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in viewer (text, hex, image) with encodings and search; a command line at the bottom; a real terminal pane below the panels.&lt;/li&gt;
+&lt;li&gt;SFTP: a server behaves like a folder, with the same keys as the disk.&lt;/li&gt;
+&lt;li&gt;A button bar and user commands, and every command rebindable to the key you want.&lt;/li&gt;
+&lt;li&gt;Six languages: English, Slovenian, German, French, Italian, Russian.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Trying, buying, updating&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Everything works for 30 days. After that the app keeps browsing, searching, viewing, comparing and checksums; copying, moving, deleting and the other commands that change files need a licence — one line above the panels says so, without nagging.&lt;/li&gt;
+&lt;li&gt;A licence is €9.99 once, covers every 1.x version, and is checked on the Mac itself: the key arrives by e-mail, is pasted under Help → Licence…, and works without the internet.&lt;/li&gt;
+&lt;li&gt;Updates through Sparkle: the app asks once whether it may look for them, and never installs one without you.&lt;/li&gt;
+&lt;li&gt;The app sends nothing anywhere — no telemetry, no usage counts — except the update check you agreed to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Known limits&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Listing uses &lt;code&gt;FileManager&lt;/code&gt; rather than &lt;code&gt;getattrlistbulk(2)&lt;/code&gt;: correct on SMB and NFS too, but folders past ~20,000 entries show it.&lt;/li&gt;
+&lt;li&gt;No plugins (Total Commander's are Windows DLLs), no FTP or WebDAV, no custom columns or thumbnails, no printing. Each is recorded, with its reason, in &lt;code&gt;docs/faza-15-nacrt.md&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Full Disk Access must be granted by hand for &lt;code&gt;~/Library&lt;/code&gt;, other applications' data and Time Machine; macOS offers no way to ask for it. The app says so at first launch and again when a listing is refused.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <enclosure url="https://github.com/ulebule/eagle-commander-releases/releases/download/v1.0.0-rc2/EagleCommander.dmg" length="10623491" type="application/octet-stream" sparkle:edSignature="W8dCUwRG3n8WVxRBZm2GcvrYuy1c6FoQBxNABa7j6RXBPNS6XdNST9U97lqr0+c+U5PBfHWTBXD9On8V3LtABg==" />
+    </item>
+    <item>
       <title>1.0.0-rc1</title>
       <pubDate>Mon, 12 Oct 2026 19:03:58 GMT</pubDate>
       <sparkle:version>202610121323</sparkle:version>
