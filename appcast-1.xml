@@ -6,6 +6,38 @@
     <description>Updates of Eagle Commander.</description>
     <language>en</language>
     <item>
+      <title>1.1.0-rc1</title>
+      <pubDate>Tue, 13 Oct 2026 18:04:11 GMT</pubDate>
+      <sparkle:version>202610132000</sparkle:version>
+      <sparkle:shortVersionString>1.1.0-rc1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:channel>beta</sparkle:channel>
+      <description>&lt;h3&gt;Quick view&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;⌃Q turns the other panel into a preview of the file under the cursor — images, PDF, video, documents, anything Quick Look can show — and it follows the cursor. ⌃Q again, or Tab, brings the list back where it was.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Drag and drop&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Files can be dragged out of a panel — into Finder, Mail, a browser, the other panel — and dropped into one. Grabbing a marked file takes all the marked ones along.&lt;/li&gt;
+&lt;li&gt;A drop opens the copy or move dialog with the folder already filled in; nothing happens until you confirm. On the same disk it is a move, onto another a copy, as in Finder; ⌥ forces a copy, ⌘ a move.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Disks&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;⌥F1 and ⌥F2 list the mounted disks — the startup disk, internal and external drives, disk images, network shares — with their free space, and open the chosen one in the left or the right panel.&lt;/li&gt;
+&lt;li&gt;⌘E ejects the disk the panel is on. Every panel and tab on it moves to the home folder first, so none is left standing on a disk that is gone.&lt;/li&gt;
+&lt;li&gt;The panel's header shows the free space of its disk, the figure Finder shows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Renaming&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The multi-rename window can take the last rename back. Whatever has not changed since gets its old name again; an entry that is gone, or whose old name another file has taken, is named instead of overwritten.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Links&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;⌃⇧F5 makes a link to the entry under the cursor in the other panel's folder: a symbolic link (absolute, or relative if you move whole trees) or a hard link for a file on the same disk.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <enclosure url="https://github.com/ulebule/eagle-commander-releases/releases/download/v1.1.0-rc1/EagleCommander.dmg" length="10805704" type="application/octet-stream" sparkle:edSignature="SFutkRFwDUoSONS3IzgDs0RLn06Hj3qJIH7667xfi4SZ+DKIKhpScCPg4pNcW4CsnLQEwqtSN+0VFugxHFt+Dg==" />
+    </item>
+    <item>
       <title>1.0.0</title>
       <pubDate>Mon, 12 Oct 2026 21:03:11 GMT</pubDate>
       <sparkle:version>202610122300</sparkle:version>
