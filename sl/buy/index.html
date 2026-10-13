@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sl" data-root="/sl/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kupite Eagle Commander</title>
+  <meta name="description" content="Licenca za Eagle Commander: 9,99 € enkrat, vse različice 1.x, na vseh vaših Macih.">
+  <link rel="canonical" href="https://eaglecommander.eaglesoft.si/sl/buy/">
+  <link rel="alternate" hreflang="en" href="https://eaglecommander.eaglesoft.si/buy/">
+  <link rel="alternate" hreflang="sl" href="https://eaglecommander.eaglesoft.si/sl/buy/">
+  <link rel="alternate" hreflang="de" href="https://eaglecommander.eaglesoft.si/de/buy/">
+  <link rel="alternate" hreflang="fr" href="https://eaglecommander.eaglesoft.si/fr/buy/">
+  <link rel="alternate" hreflang="it" href="https://eaglecommander.eaglesoft.si/it/buy/">
+  <link rel="alternate" hreflang="ru" href="https://eaglecommander.eaglesoft.si/ru/buy/">
+  <link rel="alternate" hreflang="x-default" href="https://eaglecommander.eaglesoft.si/buy/">
+  <link rel="icon" href="/icon-64.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Preskoči na vsebino</a>
+
+  <header class="site-header">
+    <a class="brand" href="/sl/"><img src="/icon-64.png" alt="" width="32" height="32">Eagle Commander</a>
+    <nav class="languages" aria-label="Jezik">
+      <a href="/buy/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="/sl/buy/" hreflang="sl" lang="sl" title="Slovenščina" aria-current="true">SL</a>
+      <a href="/de/buy/" hreflang="de" lang="de" title="Deutsch">DE</a>
+      <a href="/fr/buy/" hreflang="fr" lang="fr" title="Français">FR</a>
+      <a href="/it/buy/" hreflang="it" lang="it" title="Italiano">IT</a>
+      <a href="/ru/buy/" hreflang="ru" lang="ru" title="Русский">RU</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page prose">
+    <h1>Kupite licenco</h1>
+    <p class="lede">9,99 €, plačano enkrat. Velja za vse različice 1.x in je vaša na vseh vaših Macih.</p>
+
+    <p>Ključ prispe po e-pošti minuto po plačilu. V Eagle Commanderju ga prilepite v <strong>Pomoč → Licenca…</strong> in omejitve preizkusa izginejo.</p>
+
+    <form class="order" id="order">
+      <label>
+        Število licenc
+        <input type="number" name="quantity" id="quantity" min="1" max="100" value="1" inputmode="numeric">
+      </label>
+      <output id="total" for="quantity" aria-live="polite">9,99 €</output>
+      <button class="button" type="submit" id="checkout">Naprej na blagajno</button>
+    </form>
+    <p class="fine">Ena licenca na osebo. Ekipa kupi po eno za vsakega, ki program uporablja. DDV je vključen; zunaj evrskega območja blagajna pokaže vašo valuto. Blagajna je v angleščini, ker Paddle slovenščine še ne podpira.</p>
+
+    <p class="message" id="failed" role="alert" hidden>Blagajna se ni naložila. Morda jo je ustavil blokator vsebine; za to stran dovolite cdn.paddle.com ali pišite na <a href="mailto:support@eaglesoft.si">support@eaglesoft.si</a> in poslali vam bomo povezavo za plačilo.</p>
+
+    <h2>Dobro je vedeti</h2>
+    <ul>
+      <li>Plačilo ureja Paddle, naš preprodajalec in prodajalec po zakonu (Merchant of Record). Račun dobite od njih, oni pa obračunajo DDV.</li>
+      <li>Denar lahko zahtevate nazaj v 30 dneh, iz kateregakoli razloga. Glejte <a href="/refunds/">vračila</a> (v angleščini).</li>
+      <li>Ta stran naloži Paddlovo blagajno; nobena druga stran na tem spletišču ne nalaga ničesar od nikogar drugega. Glejte <a href="/privacy/">zasebnost</a> (v angleščini).</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Pravno">
+      <a href="/terms/">Pogoji (v angleščini)</a>
+      <a href="/privacy/">Zasebnost (v angleščini)</a>
+      <a href="/refunds/">Vračila (v angleščini)</a>
+      <a href="mailto:support@eaglesoft.si">support@eaglesoft.si</a>
+    </nav>
+    <p>Naročila obdeluje Paddle.com, naš spletni preprodajalec in prodajalec po zakonu (Merchant of Record), ki ureja tudi vprašanja o naročilih in vračila.</p>
+  </footer>
+
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="/buy/checkout.js"></script>
+</body>
+</html>

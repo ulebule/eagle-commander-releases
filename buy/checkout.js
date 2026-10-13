@@ -19,13 +19,20 @@ const LIVE = {
 // is open. SANDBOX stays for trying the whole chain without paying.
 const PADDLE = LIVE;
 
+// The page's language (site-src/, scripts/sitebuild.py) decides the price
+// format, the language of Paddle's checkout and which thanks page comes after.
+// Paddle's checkout has no Slovenian yet; there it is in English.
+const CHECKOUT_LANGUAGES = ["en", "de", "fr", "it", "ru"];
+
 (() => {
   const form = document.getElementById("order");
   const quantity = document.getElementById("quantity");
   const total = document.getElementById("total");
   const failed = document.getElementById("failed");
+  const page = document.documentElement;
+  const language = page.lang || "en";
 
-  const euros = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR" });
+  const euros = new Intl.NumberFormat(language, { style: "currency", currency: "EUR" });
 
   function count() {
     const n = Math.round(Number(quantity.value));
@@ -57,7 +64,8 @@ const PADDLE = LIVE;
       items: [{ priceId: PADDLE.priceId, quantity: count() }],
       settings: {
         displayMode: "overlay",
-        successUrl: new URL("/thanks/", window.location.href).href,
+        locale: CHECKOUT_LANGUAGES.includes(language) ? language : "en",
+        successUrl: new URL((page.dataset.root || "/") + "thanks/", window.location.href).href,
       },
     });
   });

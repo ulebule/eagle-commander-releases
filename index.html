@@ -1,10 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="/">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eagle Commander — a two-panel file manager for macOS</title>
-  <meta name="description" content="A file manager for macOS in the tradition of Total Commander: two panels, the F-keys, archives, search, folder sync and SFTP. €9.99 once, 30 days to try.">
+  <meta name="description" content="A file manager for macOS in the tradition of Total Commander: two panels, the F-keys, archives, search, folder sync and SFTP. In six languages. €9.99 once, 30 days to try.">
+  <link rel="canonical" href="https://eaglecommander.eaglesoft.si/">
+  <link rel="alternate" hreflang="en" href="https://eaglecommander.eaglesoft.si/">
+  <link rel="alternate" hreflang="sl" href="https://eaglecommander.eaglesoft.si/sl/">
+  <link rel="alternate" hreflang="de" href="https://eaglecommander.eaglesoft.si/de/">
+  <link rel="alternate" hreflang="fr" href="https://eaglecommander.eaglesoft.si/fr/">
+  <link rel="alternate" hreflang="it" href="https://eaglecommander.eaglesoft.si/it/">
+  <link rel="alternate" hreflang="ru" href="https://eaglecommander.eaglesoft.si/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://eaglecommander.eaglesoft.si/">
   <link rel="icon" href="/icon-64.png">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -17,6 +25,14 @@
       <a href="#features">What it does</a>
       <a href="#price">Price</a>
       <a href="#download">Download</a>
+    </nav>
+    <nav class="languages" aria-label="Language">
+      <a href="/" hreflang="en" lang="en" title="English" aria-current="true">EN</a>
+      <a href="/sl/" hreflang="sl" lang="sl" title="Slovenščina">SL</a>
+      <a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a>
+      <a href="/fr/" hreflang="fr" lang="fr" title="Français">FR</a>
+      <a href="/it/" hreflang="it" lang="it" title="Italiano">IT</a>
+      <a href="/ru/" hreflang="ru" lang="ru" title="Русский">RU</a>
     </nav>
   </header>
 
@@ -32,7 +48,7 @@
         <section class="panel is-active" data-panel="left">
           <div class="path">~/Projects/Atlas</div>
           <table class="listing">
-            <thead><tr><th>Name</th><th>Ext</th><th class="num">Size</th><th class="date">Date</th></tr></thead>
+            <thead><tr><th>Name</th><th>Ext</th><th class="num">Size</th><th class="date">Modified</th></tr></thead>
             <tbody>
               <tr class="dir"><td>..</td><td></td><td class="num">&lt;DIR&gt;</td><td class="date"></td></tr>
               <tr class="dir"><td>assets</td><td></td><td class="num">&lt;DIR&gt;</td><td class="date">09.10.2026 14:22</td></tr>
@@ -49,7 +65,7 @@
         <section class="panel" data-panel="right">
           <div class="path">/Volumes/Backup/Atlas</div>
           <table class="listing">
-            <thead><tr><th>Name</th><th>Ext</th><th class="num">Size</th><th class="date">Date</th></tr></thead>
+            <thead><tr><th>Name</th><th>Ext</th><th class="num">Size</th><th class="date">Modified</th></tr></thead>
             <tbody>
               <tr class="dir cursor"><td>..</td><td></td><td class="num">&lt;DIR&gt;</td><td class="date"></td></tr>
               <tr class="dir"><td>assets</td><td></td><td class="num">&lt;DIR&gt;</td><td class="date">01.10.2026 08:12</td></tr>
@@ -61,7 +77,7 @@
           </table>
         </section>
       </div>
-      <div class="status" aria-live="polite">2 of 5 files marked, 18 777 223 bytes</div>
+      <div class="status" aria-live="polite" data-template="{marked} of {files} files marked, {bytes} bytes">2 of 5 files marked, 18 777 223 bytes</div>
       <ol class="fkeys" aria-hidden="true">
         <li><kbd>F3</kbd>View</li>
         <li><kbd>F4</kbd>Edit</li>
@@ -73,66 +89,87 @@
     </figure>
     <p class="try" id="demo-help">Click the window and try it: <kbd>↑</kbd> <kbd>↓</kbd> move, <kbd>Space</kbd> marks, <kbd>←</kbd> <kbd>→</kbd> switch panels.</p>
 
-    <!-- Until the first release the download says so; after it, the second
-         block shows instead (move `hidden`). release.sh refuses a final
-         release while the published block is still hidden. -->
     <div id="download">
-      <div data-release="pending" hidden>
-        <div class="actions">
-          <span class="button" aria-disabled="true">Download for macOS: coming soon</span>
-          <a class="button secondary" href="/buy/">Buy a licence, €9.99</a>
-        </div>
-        <p class="fine">The first version is with Apple, who check and sign every app that is not from the App Store. It will be here, and on Homebrew, as soon as they are done.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/ulebule/eagle-commander-releases/releases/latest/download/EagleCommander.dmg">Download for macOS</a>
+        <a class="button secondary" href="/buy/">Buy a licence, €9.99</a>
       </div>
-      <div data-release="published">
-        <div class="actions">
-          <a class="button" href="https://github.com/ulebule/eagle-commander-releases/releases/latest/download/EagleCommander.dmg">Download for macOS</a>
-          <a class="button secondary" href="/buy/">Buy a licence, €9.99</a>
-        </div>
-        <p class="fine">macOS 14 Sonoma or later, Apple silicon and Intel. Or with Homebrew:</p>
-        <p class="fine"><code class="brew">brew install --cask ulebule/tap/eagle-commander</code></p>
-      </div>
+      <p class="fine">macOS 14 Sonoma or later, Apple silicon and Intel. Or with Homebrew:</p>
+      <p class="fine"><code class="brew">brew install --cask ulebule/tap/eagle-commander</code></p>
     </div>
+
+    <section class="section languages-band" aria-labelledby="languages-title">
+      <h2 id="languages-title">In your language</h2>
+      <p>Eagle Commander and this page speak six languages. The app follows the language of your Mac, or you choose one in its Settings — every menu, dialog and message, down to the keyboard shortcut list.</p>
+      <ul class="language-list">
+        <li lang="en">English</li>
+        <li lang="sl">Slovenščina</li>
+        <li lang="de">Deutsch</li>
+        <li lang="fr">Français</li>
+        <li lang="it">Italiano</li>
+        <li lang="ru">Русский</li>
+      </ul>
+    </section>
 
     <section class="section" id="features" aria-labelledby="features-title">
       <h2 id="features-title">What it does</h2>
       <dl class="features">
         <dt>The panels</dt>
         <dd><ul>
-          <li>Two panels with tabs, a folder tree, brief and full listings, quick search by name and a quick filter.</li>
-          <li>Tabs locked to a folder, favourite folders, history, and panels side by side or one above the other.</li>
-          <li>Colour rules by mask, age or size. The branch view: every file below a folder in one flat list.</li>
+          <li>Two panels with tabs, side by side or one above the other, a folder tree, and full or brief listings.</li>
+          <li>Quick search by typing a name, a quick filter (<kbd>⌘F</kbd>), history back and forward, and favourite folders (<kbd>⌘D</kbd>).</li>
+          <li>Tabs locked to a folder: wander off freely, and coming back to the tab brings the folder back with it.</li>
+          <li>Colour rules by mask, age and size. The branch (<kbd>⌃B</kbd>): every file below a folder in one flat list, with every command working on it.</li>
+          <li>Folder sizes on demand with the space bar, or all of them at once.</li>
+        </ul></dd>
+
+        <dt>Selecting</dt>
+        <dd><ul>
+          <li>Mark with the space bar — marked files turn red, as in Total Commander.</li>
+          <li>Select by mask, invert, select the same extension, put a selection aside and bring it back, or select the names listed in a file.</li>
         </ul></dd>
 
         <dt>Files</dt>
         <dd><ul>
-          <li>Copy, move and delete with progress, conflicts, cancelling and a background queue.</li>
-          <li>Multi-rename with patterns and counters, attributes and dates, split and join, SHA-256 and BLAKE3 checksums.</li>
-          <li>Compare two folders and synchronize them, with a direction for every pair. Compare two files line by line.</li>
+          <li>Copy, move and delete (F5, F6, F8) with progress, conflicts and cancelling, and a background queue you can pause and reorder.</li>
+          <li>Delete to the Trash, delete for good, or overwrite and delete — with a plain word about what that is worth on an SSD.</li>
+          <li>Multi-rename with patterns, counters, find and replace with regular expressions and changes of case, all previewed before anything happens.</li>
+          <li>Attributes and timestamps, split and join, and SHA-256 and BLAKE3 checksums, created and verified.</li>
+        </ul></dd>
+
+        <dt>Comparing</dt>
+        <dd><ul>
+          <li>Compare two folders and synchronize them: a direction for every pair, extras deleted only if you ask, and a check afterwards.</li>
+          <li>Compare two files line by line, with the changed part of each line highlighted, in any encoding — and an honest answer for binaries and very large files.</li>
         </ul></dd>
 
         <dt>Archives</dt>
         <dd><ul>
-          <li>ZIP and TAR read and written, RAR and 7z read. An archive opens like a folder.</li>
-          <li>Encrypted ZIP with AES-256, and the password never on a command line.</li>
+          <li>An archive opens like a folder. ZIP and TAR are read and written; TAR.GZ, TAR.XZ, RAR and 7z are read.</li>
+          <li>Encrypted ZIP read and packed with AES-256 (<kbd>⌥F5</kbd>). The password never goes on a command line; it stays for the session, or in the Keychain if you ask.</li>
         </ul></dd>
 
         <dt>Finding things</dt>
         <dd><ul>
-          <li>Search by name, size, date and content, as text or a regular expression, inside archives too.</li>
-          <li>Saved searches, and a duplicate finder that decides by content.</li>
+          <li>Search (<kbd>⌥F7</kbd>) by name, mask, size, date and content — as text or as a regular expression — inside archives too.</li>
+          <li>The results go into the panel, where every command works on them. Searches can be saved.</li>
+          <li>A duplicate finder that decides by content and never selects a whole group for you.</li>
         </ul></dd>
 
-        <dt>Servers and the rest</dt>
+        <dt>Servers</dt>
         <dd><ul>
-          <li>SFTP: a server behaves like a folder, with the same keys as the disk.</li>
-          <li>A viewer for text, hex and images, a command line, and a real terminal below the panels.</li>
-          <li>A button bar, your own commands, and every shortcut rebindable.</li>
-          <li>In English, Slovenian, German, French, Italian and Russian.</li>
+          <li>SFTP with a password or a key: a server behaves like a folder, with the same keys as the disk. Your servers are one <kbd>⌘K</kbd> away.</li>
+        </ul></dd>
+
+        <dt>Viewing and the rest</dt>
+        <dd><ul>
+          <li>A built-in viewer (F3) for text, hex and images, with encodings and search, and Quick Look on <kbd>⌥Space</kbd>.</li>
+          <li>A command line under the panels, a real terminal below them, and a terminal opened in the folder you are in.</li>
+          <li>A button bar, your own commands, and every keyboard shortcut yours to change.</li>
         </ul></dd>
 
         <dt>Not yet</dt>
-        <dd>No plugins (Total Commander’s are Windows libraries), no FTP or WebDAV, no thumbnails. Folders with more than about 20,000 files list noticeably slower.</dd>
+        <dd>No plugins (Total Commander’s are Windows libraries), no FTP or WebDAV, no thumbnails or custom columns, no printing. Folders with more than about 20,000 files list noticeably slower.</dd>
       </dl>
     </section>
 
@@ -153,6 +190,18 @@
       <h2 id="privacy-title">It sends nothing anywhere</h2>
       <p>A file manager sees every file on your disk, so this one keeps to itself: no telemetry, no usage counts, no crash reports sent behind your back. Your licence key is checked on your Mac, without the internet.</p>
       <p>The one time Eagle Commander goes online is to look for a new version, and only if you said yes when it asked. <a href="/privacy/">The privacy policy</a> says exactly what that request contains.</p>
+    </section>
+
+    <section class="section prose" id="questions" aria-labelledby="questions-title">
+      <h2 id="questions-title">Questions</h2>
+      <h3>The F-keys change the brightness instead</h3>
+      <p>Most Mac keyboards give F1–F12 to brightness and volume. Hold <kbd>fn</kbd> with them, or turn on “Use F1, F2, etc. keys as standard function keys” in System Settings → Keyboard. Every command is in the menus as well, and every shortcut can be changed.</p>
+      <h3>Why does it mention Full Disk Access?</h3>
+      <p>macOS asks about your Desktop, Documents and external disks by itself, the first time the app looks there. <code>~/Library</code>, other apps’ data and Time Machine need Full Disk Access, which only you can grant, in System Settings → Privacy &amp; Security. Eagle Commander shows you where at first launch, and works without it everywhere else.</p>
+      <h3>How do updates work?</h3>
+      <p>Eagle Commander asks once whether it may look for new versions, and never installs one without you. A licence covers every 1.x update.</p>
+      <h3>Is it Total Commander for the Mac?</h3>
+      <p>No. It is a program of its own, made for the Mac, that borrows Total Commander’s keys and habits. It is not affiliated with Total Commander or its author.</p>
     </section>
   </main>
 

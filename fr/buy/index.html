@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr" data-root="/fr/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acheter Eagle Commander</title>
+  <meta name="description" content="Une licence pour Eagle Commander : 9,99 € une fois, toutes les versions 1.x, sur tous vos Mac.">
+  <link rel="canonical" href="https://eaglecommander.eaglesoft.si/fr/buy/">
+  <link rel="alternate" hreflang="en" href="https://eaglecommander.eaglesoft.si/buy/">
+  <link rel="alternate" hreflang="sl" href="https://eaglecommander.eaglesoft.si/sl/buy/">
+  <link rel="alternate" hreflang="de" href="https://eaglecommander.eaglesoft.si/de/buy/">
+  <link rel="alternate" hreflang="fr" href="https://eaglecommander.eaglesoft.si/fr/buy/">
+  <link rel="alternate" hreflang="it" href="https://eaglecommander.eaglesoft.si/it/buy/">
+  <link rel="alternate" hreflang="ru" href="https://eaglecommander.eaglesoft.si/ru/buy/">
+  <link rel="alternate" hreflang="x-default" href="https://eaglecommander.eaglesoft.si/buy/">
+  <link rel="icon" href="/icon-64.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="site-header">
+    <a class="brand" href="/fr/"><img src="/icon-64.png" alt="" width="32" height="32">Eagle Commander</a>
+    <nav class="languages" aria-label="Langue">
+      <a href="/buy/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="/sl/buy/" hreflang="sl" lang="sl" title="Slovenščina">SL</a>
+      <a href="/de/buy/" hreflang="de" lang="de" title="Deutsch">DE</a>
+      <a href="/fr/buy/" hreflang="fr" lang="fr" title="Français" aria-current="true">FR</a>
+      <a href="/it/buy/" hreflang="it" lang="it" title="Italiano">IT</a>
+      <a href="/ru/buy/" hreflang="ru" lang="ru" title="Русский">RU</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page prose">
+    <h1>Acheter une licence</h1>
+    <p class="lede">9,99 €, payé une fois. Elle couvre toutes les versions 1.x et vous appartient sur tous vos Mac.</p>
+
+    <p>Votre clé arrive par e-mail une minute après le paiement. Collez-la dans Eagle Commander sous <strong>Aide → Licence…</strong> et les limites de l’essai disparaissent.</p>
+
+    <form class="order" id="order">
+      <label>
+        Nombre de licences
+        <input type="number" name="quantity" id="quantity" min="1" max="100" value="1" inputmode="numeric">
+      </label>
+      <output id="total" for="quantity" aria-live="polite">9,99 €</output>
+      <button class="button" type="submit" id="checkout">Passer au paiement</button>
+    </form>
+    <p class="fine">Une licence par personne. Une équipe en achète une pour chaque personne qui l’utilise. TVA comprise ; hors de la zone euro, le paiement affiche votre propre devise.</p>
+
+    <p class="message" id="failed" role="alert" hidden>Le paiement ne s’est pas chargé. Un bloqueur de contenu l’a peut-être arrêté ; autorisez cdn.paddle.com pour cette page, ou écrivez à <a href="mailto:support@eaglesoft.si">support@eaglesoft.si</a> et nous vous enverrons un lien de paiement.</p>
+
+    <h2>Bon à savoir</h2>
+    <ul>
+      <li>Le paiement est géré par Paddle, notre revendeur et Merchant of Record. Votre reçu vient de chez eux, et ce sont eux qui s’occupent de la TVA.</li>
+      <li>Vous pouvez demander à être remboursé sous 30 jours, pour n’importe quelle raison. Voir les <a href="/refunds/">remboursements</a> (en anglais).</li>
+      <li>Cette page charge le paiement de Paddle ; aucune autre page de ce site ne charge quoi que ce soit de qui que ce soit d’autre. Voir la <a href="/privacy/">confidentialité</a> (en anglais).</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Mentions légales">
+      <a href="/terms/">Conditions (en anglais)</a>
+      <a href="/privacy/">Confidentialité (en anglais)</a>
+      <a href="/refunds/">Remboursements (en anglais)</a>
+      <a href="mailto:support@eaglesoft.si">support@eaglesoft.si</a>
+    </nav>
+    <p>Les commandes sont traitées par Paddle.com, notre revendeur en ligne et Merchant of Record, qui s’occupe aussi des questions sur les commandes et des retours.</p>
+  </footer>
+
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="/buy/checkout.js"></script>
+</body>
+</html>

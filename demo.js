@@ -20,7 +20,12 @@
     const files = rows(panels[active]).filter((row) => row.dataset.size);
     const marked = files.filter((row) => row.classList.contains("marked"));
     const bytes = marked.reduce((sum, row) => sum + Number(row.dataset.size), 0);
-    status.textContent = `${marked.length} of ${files.length} files marked, ${grouped(bytes)} bytes`;
+    // The sentence comes from the page, in the page's language.
+    const template = status.dataset.template || "{marked} of {files} files marked, {bytes} bytes";
+    status.textContent = template
+      .replace("{marked}", marked.length)
+      .replace("{files}", files.length)
+      .replace("{bytes}", grouped(bytes));
   }
 
   function moveCursor(panel, index) {

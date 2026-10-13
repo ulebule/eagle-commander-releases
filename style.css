@@ -103,6 +103,26 @@ a:hover { text-decoration-thickness: 2px; }
 .site-nav a { color: var(--ink); text-decoration: none; }
 .site-nav a:hover { color: var(--eagle); }
 
+/* The language switcher: the six codes, the current one filled in. Every page
+ * exists in every language (site-src/, scripts/sitebuild.py). */
+.languages {
+  display: flex;
+  gap: 0.15rem;
+  margin-left: auto;
+  font-size: 0.78rem;
+}
+.site-nav + .languages { margin-left: 0; }
+.languages a {
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.languages a:hover { color: var(--eagle); }
+.languages a[aria-current="true"] { background: var(--eagle); color: var(--eagle-ink); }
+
 .site-footer {
   margin-top: 6rem;
   padding: 2rem 0 3rem;
@@ -295,6 +315,23 @@ code, kbd {
 
 .section { margin-top: 6rem; }
 
+.languages-band p { max-width: var(--measure); }
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.language-list li {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.94rem;
+}
+
 .features {
   display: grid;
   grid-template-columns: minmax(9rem, 14rem) minmax(0, var(--measure));
@@ -365,6 +402,7 @@ code, kbd {
   .features, .price { grid-template-columns: 1fr; }
   .features dd { border-top: 0; padding-top: 0.2rem; }
   .site-nav a:not(:last-child) { display: none; }
+  .site-header { flex-wrap: wrap; row-gap: 0.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
