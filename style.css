@@ -392,6 +392,36 @@ code, kbd {
 .message { margin-top: 1.5rem; padding: 0.8rem 1rem; border-left: 3px solid var(--marked); background: var(--paper); max-width: var(--measure); }
 .message[hidden] { display: none; }
 
+/* ---------- Press kit ---------- */
+
+.facts,
+.descriptions {
+  display: grid;
+  grid-template-columns: minmax(7rem, auto) minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1rem;
+}
+.facts dt, .descriptions dt { font-weight: 650; }
+.facts dd, .descriptions dd { margin: 0; }
+
+.page.prose > .shots {
+  max-width: var(--wide);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: 1.5rem;
+}
+.shots figure { margin: 0; }
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-window);
+  border: 1px solid var(--rule);
+}
+.shots figcaption { color: var(--muted); font-size: 0.875rem; margin-top: 0.5rem; }
+
+.press-icon { width: 128px; height: 128px; }
+
 /* ---------- Small screens ---------- */
 
 @media (max-width: 760px) {
@@ -399,7 +429,8 @@ code, kbd {
   .panel + .panel { display: none; }
   .fkeys { grid-template-columns: repeat(3, 1fr); }
   .listing .date { display: none; }
-  .features, .price { grid-template-columns: 1fr; }
+  .features, .price, .facts, .descriptions { grid-template-columns: 1fr; }
+  .facts dd, .descriptions dd { margin-bottom: 0.6rem; }
   .features dd { border-top: 0; padding-top: 0.2rem; }
   .site-nav a:not(:last-child) { display: none; }
   .site-header { flex-wrap: wrap; row-gap: 0.5rem; }
