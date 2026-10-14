@@ -6,6 +6,18 @@
     <description>Updates of Eagle Commander.</description>
     <language>en</language>
     <item>
+      <title>1.1.1</title>
+      <pubDate>Wed, 14 Oct 2026 19:45:20 GMT</pubDate>
+      <sparkle:version>202610142141</sparkle:version>
+      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description>&lt;h3&gt;Security&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A folder listing from an SFTP server can no longer name an entry with a "/" in it. A malicious server could list a folder called &lt;code&gt;x/..&lt;/code&gt;, and copying the folder above it would then write outside the folder you chose.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <enclosure url="https://github.com/ulebule/eagle-commander-releases/releases/download/v1.1.1/EagleCommander.dmg" length="10815619" type="application/octet-stream" sparkle:edSignature="PMyoSPK4JHvX92wzLou2cclyZw3Ebcr8oRvgzIE3naFIjWZvq+ddHxrtirs4hwqggUN0wojg0lYimDZalRSrCA==" />
+    </item>
+    <item>
       <title>1.1.0</title>
       <pubDate>Tue, 13 Oct 2026 18:38:32 GMT</pubDate>
       <sparkle:version>202610132035</sparkle:version>
