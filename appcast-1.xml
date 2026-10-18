@@ -6,6 +6,56 @@
     <description>Updates of Eagle Commander.</description>
     <language>en</language>
     <item>
+      <title>1.2.0</title>
+      <pubDate>Sun, 18 Oct 2026 18:52:58 GMT</pubDate>
+      <sparkle:version>202610181304</sparkle:version>
+      <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description>&lt;h3&gt;FTP and FTPS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Eagle Commander connects to FTP and FTPS servers: from ⌘K, or by typing an ftp:// or ftps:// address into the path field. Browsing, F5 both ways, F6, ⇧F6, F7 and F8 work as on SFTP. A large transfer runs on a connection of its own, so the panel stays usable meanwhile.&lt;/li&gt;
+&lt;li&gt;FTPS is encrypted from end to end, or it does not connect. A certificate this Mac does not trust (a NAS, a device) is shown with its fingerprint and asked about once; one that changes later is an error, not a question.&lt;/li&gt;
+&lt;li&gt;Passwords are kept in your keychain under the protocol. A password the server refused is not tried again and again: you are asked, and told why.&lt;/li&gt;
+&lt;li&gt;The server editor (⌘K → New…) asks for the protocol first: SFTP, FTPS or FTP. FTP and FTPS log in with a password. Plain FTP is marked “unencrypted” in the server list, and the editor says what that means.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Servers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;F6 between two folders on the same SFTP server works now: it is a rename on the server, instant, and nothing goes through your Mac.&lt;/li&gt;
+&lt;li&gt;The progress bar moves smoothly while a large file is copied to or from a server, instead of standing still until the file is done.&lt;/li&gt;
+&lt;li&gt;An error from a server while copying asks "Skip / Skip all / Abort", as on the disk, instead of ending the whole job — and says in plain words what went wrong and with which file, instead of a code from the SSH library.&lt;/li&gt;
+&lt;li&gt;SFTP: when the list of known server keys cannot be read, connecting stops with a message, instead of asking about every server as if it were new.&lt;/li&gt;
+&lt;li&gt;SFTP: that message names the file, too — deleting it starts the list anew, and every server is asked about once more.&lt;/li&gt;
+&lt;li&gt;SFTP: a saved password for a user name that contains “@” (common with hosting) is kept under the whole name. Such a password is asked for once more.&lt;/li&gt;
+&lt;li&gt;⌘K → Forget Server Key (SFTP) or Forget Certificate (FTPS): after a server was reinstalled, the next connection shows its new key and asks, instead of refusing it.&lt;/li&gt;
+&lt;li&gt;Copying from one server straight to another is refused at once, in plain words, instead of failing file by file.&lt;/li&gt;
+&lt;li&gt;A click selects a row again in the server list (⌘K), the hotlist and the disk list; only the keyboard did. A double click still opens it.&lt;/li&gt;
+&lt;li&gt;⌘R retries a panel that shows an error, as "Try Again" does.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Names&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A new name with a “/” is refused also when a combining mark follows it (rename on disk and on SFTP, multi-rename); F7 on SFTP makes such a folder in the right place.&lt;/li&gt;
+&lt;li&gt;Archives: an entry that climbs out of the archive with “..” hidden behind a combining mark is not listed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Marking&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘-click marks or unmarks a file, and ⇧-click marks every file from the cursor to the clicked one, as in Finder. A plain click still only moves the cursor, and ⌃-click still opens the context menu.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The mouse&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;F1 opens the list of keyboard shortcuts, as it was meant to; in 1.0 and 1.1 it opened the acknowledgements.&lt;/li&gt;
+&lt;li&gt;In the brief listing (⌘2), a click puts the cursor on the entry clicked and a double click opens it. In every column after the first, both went to the entry in the same row of the first column.&lt;/li&gt;
+&lt;li&gt;The View menu has the full and brief listings and the folder tree, the filter, refreshing, the tabs, swapping and mirroring the panels, and the way to the parent folder, the disk root and the favourites. The Commands menu has the branch of the selected folders and a terminal in the folder under the cursor. The keys stay as they were, yours included. ⌘D is titled Add to or remove from favourites in the menus, as it does both.&lt;/li&gt;
+&lt;li&gt;The context menu of a file starts with Mark or unmark and Select Same Extension, and has Split · join, Unpack, Put the name on the command line (⌃Enter, now also a command for a button or a key of your own) and a terminal in the folder under the cursor. The menu of the folder itself has Deselect All and selecting by mask. The folder tree (⌘3) has a context menu too.&lt;/li&gt;
+&lt;li&gt;The tab row is always there, with a + after the last tab that opens a new one. A tab's context menu opens another, closes it, or locks it to its folder. A new tab keeps the panel's hidden-files, colour and sort settings.&lt;/li&gt;
+&lt;li&gt;The path bar has buttons for the disk root, the favourites and this panel's disks; the status bar has one for the filter, and the open filter field closes with its ×. A click anywhere in the path bar or the status bar, the filter's × included, makes that panel the active one.&lt;/li&gt;
+&lt;li&gt;The command line has a Run button, and a menu of the commands run before that puts the one you pick back into the line. It shows the folder it runs in, the $ and the name of a running command again; all three had shrunk to nothing since 1.0.&lt;/li&gt;
+&lt;li&gt;After a drop, the copy dialog switches between copy and move with a click; before, only the keys held while dropping chose.&lt;/li&gt;
+&lt;li&gt;Find Files: a double click on a hit goes to it.&lt;/li&gt;
+&lt;li&gt;Find Duplicate Files: a click on a file's name or folder ticks it, not only a click on the box.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <enclosure url="https://github.com/ulebule/eagle-commander-releases/releases/download/v1.2.0/EagleCommander.dmg" length="11190642" type="application/octet-stream" sparkle:edSignature="LF1+xxRjsK/2UntXqRr86vSMFHUMGfFkcyQF0N621FsvmzITAX0MnUPSszhUAF0eA5E8/CG4xN1z0DlevqDjBw==" />
+    </item>
+    <item>
       <title>1.2.0-rc1</title>
       <pubDate>Sat, 17 Oct 2026 02:43:19 GMT</pubDate>
       <sparkle:version>202610170440</sparkle:version>
