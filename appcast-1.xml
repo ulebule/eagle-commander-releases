@@ -6,6 +6,21 @@
     <description>Updates of Eagle Commander.</description>
     <language>en</language>
     <item>
+      <title>1.3.0</title>
+      <pubDate>Sat, 07 Nov 2026 19:33:15 GMT</pubDate>
+      <sparkle:version>202611072030</sparkle:version>
+      <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description>&lt;h3&gt;Free to use, with a window at launch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Eagle Commander now works fully without a licence, with no time limit: copying, moving, deleting and every other command, on day one and on day one hundred. Nothing turns read-only after 30 days any more.&lt;/li&gt;
+&lt;li&gt;Without a licence, a short window appears at every launch and closes only with one of three numbered buttons (or its number on the keyboard), picked at random at every launch. If you use Eagle Commander for more than 30 days, please buy a licence: the window then never shows again.&lt;/li&gt;
+&lt;li&gt;A licence now covers every version, future major versions included. Keys bought for 1.x keep working as they are; new keys say "Covers: all versions".&lt;/li&gt;
+&lt;li&gt;The licence line above the panels and the trial countdown are gone. The welcome window at the first launch now appears only when Full Disk Access is missing.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <enclosure url="https://github.com/ulebule/eagle-commander-releases/releases/download/v1.3.0/EagleCommander.dmg" length="11170078" type="application/octet-stream" sparkle:edSignature="+qKD34rH4Ikz03mzQrFdytMMzO7PuzjGTDaAiWgvo8vwMJvsftd9S/4SdgVjIPTmBT1Qf5MvoQRtg2ZMOC+4DQ==" />
+    </item>
+    <item>
       <title>1.2.0</title>
       <pubDate>Sun, 18 Oct 2026 18:52:58 GMT</pubDate>
       <sparkle:version>202610181304</sparkle:version>
