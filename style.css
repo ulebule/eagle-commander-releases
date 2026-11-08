@@ -299,6 +299,12 @@ code, kbd {
 
 .fine { color: var(--muted); font-size: 0.875rem; margin: 0.6rem 0 0; }
 
+/* Download sits at the top, under the lede, before the window: free first,
+ * the licence plainly optional. */
+#download { margin: -1rem 0 2.5rem; }
+#download .actions { margin-top: 0; }
+.fine.free { color: var(--ink); font-weight: 600; }
+
 .brew {
   display: inline-flex;
   align-items: center;
